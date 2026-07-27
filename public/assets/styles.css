@@ -12,6 +12,7 @@
   --border: #e4ddd0;
   --shadow: 0 22px 60px rgba(47, 42, 30, 0.08);
   --serif: Georgia, "Times New Roman", serif;
+  --display: Didot, "Bodoni 72", "Bodoni MT", "Libre Bodoni", Georgia, "Times New Roman", serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -101,25 +102,20 @@ summary:focus-visible {
   align-items: center;
   gap: 11px;
   color: var(--ink);
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: var(--display);
+  font-size: 1.65rem;
+  font-weight: 400;
   text-decoration: none;
 }
 
 .brand-mark {
   width: 36px;
   height: 36px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(118, 89, 26, 0.26);
+  flex: 0 0 36px;
+  border: 1px solid rgba(118, 89, 26, 0.2);
   border-radius: 10px;
-  background: linear-gradient(145deg, var(--surface), #eee8db);
-  color: var(--gold);
-  font-family: var(--serif);
-  font-size: 1.12rem;
-  font-weight: 700;
   box-shadow: 0 5px 14px rgba(47, 42, 30, 0.08);
+  object-fit: cover;
 }
 
 nav {
@@ -149,7 +145,8 @@ h1,
 h2,
 h3 {
   margin-block: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
+  font-weight: 400;
   line-height: 1.12;
   text-wrap: balance;
 }
@@ -157,12 +154,12 @@ h3 {
 h1 {
   max-width: 900px;
   font-size: clamp(2.75rem, 7vw, 5.75rem);
-  letter-spacing: -0.045em;
+  letter-spacing: -0.02em;
 }
 
 h2 {
   font-size: clamp(2rem, 4vw, 3.25rem);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
 }
 
 h3 {
@@ -262,13 +259,13 @@ p {
   padding: 32px;
   border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: 24px;
-  background: linear-gradient(145deg, var(--sage), var(--sage-dark));
+  background: linear-gradient(145deg, #657563, var(--sage-dark));
   box-shadow: var(--shadow);
   color: white;
 }
 
 .journey-card .eyebrow {
-  color: rgba(255, 255, 255, 0.78);
+  color: white;
 }
 
 .journey-card h2 {
@@ -278,7 +275,7 @@ p {
 
 .journey-card p:not(.eyebrow) {
   margin-top: 18px;
-  color: rgba(255, 255, 255, 0.86);
+  color: white;
 }
 
 .journey-card .text-link {
@@ -400,7 +397,7 @@ summary::after {
 }
 
 details[open] summary::after {
-  content: "−";
+  content: "×";
 }
 
 .answer {
@@ -425,7 +422,7 @@ details[open] summary::after {
 }
 
 .contact-card .eyebrow {
-  color: var(--gold-soft);
+  color: #f0dfb3;
 }
 
 .contact-card h2 {
@@ -628,6 +625,18 @@ details[open] summary::after {
 
   .footer-inner > :last-child {
     text-align: left;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-inner {
+    flex-wrap: wrap;
+    padding-block: 8px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: flex-end;
   }
 }
 

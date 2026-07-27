@@ -2,15 +2,16 @@
 
 Public support and privacy pages for **Reisen**, provided by **StratusLens LLC**.
 
-This repository intentionally contains only static HTML and CSS. It has no
+This repository intentionally contains only static HTML, CSS, and a small
+Node-based validation suite. It has no
 analytics, cookies, forms, runtime dependencies, application source code, or
 credentials.
 
 ## Public routes
 
-- `/` — overview
-- `/support/` — customer support and account help
-- `/privacy/` — privacy policy
+- `/`: overview
+- `/support/`: customer support and account help
+- `/privacy/`: privacy policy
 
 ## Verify locally
 
@@ -31,5 +32,5 @@ The included `render.yaml` defines a Render Static Site.
 4. After deployment, verify `/support/` and `/privacy/` both load over HTTPS.
 5. Use those exact URLs in App Store Connect.
 
-No environment variables or build step are required.
-
+No environment variables or compilation step are required. Render runs
+`npm test` before each deployment and publishes only the `public` directory.
