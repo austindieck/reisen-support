@@ -1,0 +1,10 @@
+{
+  "name": "reisen-support",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public support and privacy pages for Reisen by StratusLens LLC.",
+  "scripts": {
+    "test": "node --test"
+  }
+}
+
