@@ -102,7 +102,11 @@ test("the website loads only local assets", async () => {
 test("Render publishes only the static public directory", async () => {
   const blueprint = await load("render.yaml");
   assert.match(blueprint, /runtime:\s*static/);
-  assert.match(blueprint, /plan:\s*free/);
+  assert.doesNotMatch(
+    blueprint,
+    /^\s*plan\s*:/m,
+    "Render static sites must omit the instance plan field"
+  );
   assert.match(blueprint, /buildCommand:\s*npm test/);
   assert.match(blueprint, /staticPublishPath:\s*\.\/public/);
   assert.match(blueprint, /Content-Security-Policy/);

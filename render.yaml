@@ -2,7 +2,6 @@ services:
   - type: web
     name: reisen-support
     runtime: static
-    plan: free
     buildCommand: npm test
     staticPublishPath: ./public
     headers:
